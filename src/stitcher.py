@@ -135,7 +135,7 @@ class DeletableImage(ft.Page):
                 ft.Container(
                     bgcolor="#333333",
                     border_radius=ft.border_radius.all(5),
-                    border=ft.border.all(1, ft.colors.BLACK),
+                    border=ft.border.all(1, ft.Colors.BLACK),
                 ),
                 ft.Container(
                     content=ft.Image(
@@ -312,7 +312,7 @@ class StitchApp(ft.Page):
                                 bgcolor="#333333",
                                 padding=10,
                                 border_radius=ft.border_radius.all(5),
-                                border=ft.border.all(1, ft.colors.BLACK),
+                                border=ft.border.all(1, ft.Colors.BLACK),
                             ),
                         ),
                     ],
