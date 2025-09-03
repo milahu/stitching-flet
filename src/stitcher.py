@@ -170,7 +170,7 @@ class DeletableImage(ft.Page):
         self.delete_image(self)
 
 
-class StitchApp(ft.Page):
+class StitchApp(ft.Container):
     states = Enum(
         "states",
         [
@@ -188,11 +188,7 @@ class StitchApp(ft.Page):
     def __init__(self, page: ft.Page = None):
         self.parent_page = page
 
-        conn = page.connection
-        session_id = page.session_id
-        loop = page.loop
-
-        super().__init__(conn, session_id, loop)
+        super().__init__()
 
         self.panorama: Any = None
 
