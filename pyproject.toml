@@ -16,6 +16,13 @@ dependencies = [
 dev = [
 ]
 
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+stitcher = "stitcher:main"
+
 [tool.app]
 name = "Smart Image Merger"
 
