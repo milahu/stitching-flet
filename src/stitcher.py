@@ -519,7 +519,7 @@ class StitchApp(ft.UserControl):
                 self.show_error(humanize_exceptions(er))
 
 
-def main(page: ft.Page):
+def main_target(page: ft.Page):
     page.title = "Smart Image Merger"
 
     page.window_min_width = 900
@@ -538,5 +538,9 @@ def main(page: ft.Page):
     page.add(app)
 
 
+def main():
+    return ft.app(target=main_target)
+
+
 if __name__ == "__main__":
-    ft.app(target=main)
+    main()
