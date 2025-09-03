@@ -185,10 +185,14 @@ class StitchApp(ft.Page):
         ],
     )
 
-    def __init__(self, page: ft.Page):
+    def __init__(self, page: ft.Page = None):
         self.parent_page = page
 
-        super().__init__()
+        conn = page.connection
+        session_id = page.session_id
+        loop = page.loop
+
+        super().__init__(conn, session_id, loop)
 
         self.panorama: Any = None
 
