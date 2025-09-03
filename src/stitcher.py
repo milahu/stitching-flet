@@ -138,10 +138,10 @@ class DeletableImage(ft.Page):
                     border=ft.border.all(1, ft.Colors.BLACK),
                 ),
                 ft.Container(
-                    content=ft.Image(
+                    image=ft.DecorationImage(
                         src=self.preview_image_path,
+                        fit=ft.ImageFit.CONTAIN,
                     ),
-                    image_fit=ft.ImageFit.CONTAIN,
                     alignment=ft.alignment.center,
                     padding=ft.padding.only(left=12, right=12, top=40, bottom=12),
                 ),
@@ -304,10 +304,11 @@ class StitchApp(ft.Page):
                             alignment=ft.alignment.center,
                             visible=False,
                             content=ft.Container(
-                                image_fit=ft.ImageFit.CONTAIN,
-                                content=ft.Image(
-                                    ref=self.result_image,
-                                    src="",
+                                image=ft.DecorationImage(
+                                    # ref=self.result_image, # FIXME invalid arg
+                                    src=self.result_image,
+                                    # src="",
+                                    fit=ft.ImageFit.CONTAIN,
                                 ),
                                 bgcolor="#333333",
                                 padding=10,
