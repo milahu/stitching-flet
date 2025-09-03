@@ -97,7 +97,7 @@ class MergerError(Exception):
     pass
 
 
-class DeletableImage(ft.UserControl):
+class DeletableImage(ft.Page):
     def __init__(
         self, file_path: str, delete_image: Callable[["DeletableImage"], None]
     ):
@@ -129,7 +129,7 @@ class DeletableImage(ft.UserControl):
             self.preview_image_path = tmp_file.name
         
 
-    def build(self) -> ft.UserControl:
+    def build(self) -> ft.Page:
         return ft.Stack(
             [
                 ft.Container(
@@ -170,7 +170,7 @@ class DeletableImage(ft.UserControl):
         self.delete_image(self)
 
 
-class StitchApp(ft.UserControl):
+class StitchApp(ft.Page):
     states = Enum(
         "states",
         [
@@ -192,7 +192,7 @@ class StitchApp(ft.UserControl):
 
         self.panorama: Any = None
 
-    def build(self) -> ft.UserControl:
+    def build(self) -> ft.Page:
         self.welcom_screen = ft.Ref[ft.Container]()
         self.stitching_images = ft.Ref[ft.GridView]()
         self.add_image_button = ft.Ref[ft.ElevatedButton]()
@@ -532,7 +532,7 @@ def main_target(page: ft.Page):
 
     app = StitchApp(page=page)
 
-    # need to display layout correctly, since ft.UserControl is ft.Stack
+    # need to display layout correctly, since ft.Page is ft.Stack
     app.expand = True
 
     page.add(app)
