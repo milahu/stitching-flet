@@ -527,7 +527,7 @@ def main_target(page: ft.Page):
 
     page.padding = 30
     page.theme_mode = ft.ThemeMode.DARK
-    page.theme = ft.theme.Theme(color_scheme_seed="#1843ff")
+    page.theme = ft.Theme(color_scheme_seed="#1843ff")
     page.update()
 
     app = StitchApp(page=page)
